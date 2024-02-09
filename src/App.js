@@ -14,6 +14,12 @@ class App extends Component {
     }
 
   }
+  //método que ante el evento de teclear en la caja de texto, actualiza su estado con el texto introducido
+  changeName=(event)=>{
+  this.setState({
+    name: event.target.value
+  })
+  }
 
   render() {
     return (
@@ -29,6 +35,8 @@ class App extends Component {
           tome el valor del atributo del atributo name del estado del componente principal */
           }
           <HelloComponent nombre={this.state.name}></HelloComponent>
+          {/*Caja de texto con el evento onChange, asociamos el método aqui */}
+          <input value={this.state.name} onChange={this.changeName}></input>
         </header>
       </div>
     );
