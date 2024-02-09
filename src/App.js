@@ -2,6 +2,7 @@ import React, {Component} from 'react'; //HEMOS CONVERTIDO APP.JS EN UN COMPONEN
 import logo from './logo.svg';
 import './App.css';
 import HelloComponent from './components/HelloComponent';
+import InputComponent from './components/InputComponent';
 //Este componente principal es padre del componente HelloComponent
 
 class App extends Component {
@@ -35,8 +36,8 @@ class App extends Component {
           tome el valor del atributo del atributo name del estado del componente principal */
           }
           <HelloComponent nombre={this.state.name}></HelloComponent>
-          {/*Caja de texto con el evento onChange, asociamos el método aqui */}
-          <input value={this.state.name} onChange={this.changeName}></input>
+          {/*no olvidar importar el nuevo componente */}
+          <InputComponent nombre={this.state.name} cambiarNombre={this.changeName}></InputComponent>
         </header>
       </div>
     );
